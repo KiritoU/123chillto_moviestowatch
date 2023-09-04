@@ -13,7 +13,9 @@ if __name__ == "__main__":
     while True:
         try:
             crawler.crawl_page(f"{CONFIG.CHILLTO123_TVSHOWS_PAGE}/")
-            crawler.crawl_page(f"{CONFIG.CHILLTO123_MOVIES_PAGE}/")
+            crawler.crawl_page(
+                f"{CONFIG.CHILLTO123_MOVIES_PAGE}/", post_type=CONFIG.TYPE_MOVIE
+            )
         except Exception as e:
             pass
         time.sleep(CONFIG.WAIT_BETWEEN_LATEST)
