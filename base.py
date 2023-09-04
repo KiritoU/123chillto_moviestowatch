@@ -93,7 +93,7 @@ class Crawler:
 
         except Exception as e:
             helper.error_log(
-                f"Failed to get_episodes_data. Href: {href}",
+                f"Failed to get_episodes_data. Href: {href}\n{e}",
                 log_file="base.episodes.log",
             )
 
