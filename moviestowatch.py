@@ -104,16 +104,18 @@ class Moviestowatch:
         }
 
         key_mapping = {
+            "IMDb": "imdb",
             "IMDB": "imdb",
             "Duration": "duration",
             "Genres": "genre",
             "Actors": "cast",
             "Starring": "cast",
             "Directors": "director",
-            "Production": "director",
             "Created by": "director",
+            "Production": "director",
             "Country": "country",
             "Released": "year",
+            "Release": "year",
             "Release Year": "year",
         }
 
@@ -178,7 +180,8 @@ class Moviestowatch:
                 "thumb": post_data.get("poster_url", ""),
                 "coverUrl": "",
                 "genres": self.get_slug_list_from(table="genres", names=genre_names),
-                "year": self.get_year_from(post_data.get("year", 0)),
+                # "year": self.get_year_from(post_data.get("year", 0)),
+                "year": post_data.get("year", 0),
                 "country": json.loads(
                     self.get_slug_list_from(table="country", names=country_names)
                 )[0],
