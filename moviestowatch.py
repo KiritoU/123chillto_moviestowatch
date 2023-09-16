@@ -338,7 +338,7 @@ class Moviestowatch:
         #         "1": "Episode 1",
         #     }
 
-        self.film["season_number"] = 1  # self.get_season_number()
+        self.film["season_number"] = self.get_season_number()
 
         data = [
             {
